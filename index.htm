@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>flow state example</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+$(document).ready(function(){ 
+  $.getJSON('http://codeivate.com/users/paul.json?callback=?',
+  function data(data) {
+    var programming_now_message;
+    console.dir(data);//check your browser console
+    $('#name').html(data.name);
+
+    if(data.programming_now) {
+      programming_now_message = "Is programming right now in ";
+      programming_now_message += data.current_language + ".";
+      if(data.streaking_now) {
+        programming_now_message += " He is in the zone!"
+      }
+    } else {
+      programming_now_message = "Is not programming :(";
+    }
+    $('.programming').html(programming_now_message);    
+  });
+});
+</script>
+</head>
+<body>
+<h1 id="name"></h1>
+<p class='programming'></p>
+</body>
+</html>
