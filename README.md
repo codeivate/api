@@ -1,4 +1,6 @@
-api
-===
+Basic Codeivate API examples
+=========
 
-Codeivate API
+see index.htm for a simple example.
+
+
